@@ -6,17 +6,31 @@ const ExpenseForm = () => {
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
+  useState({
+    enteredTitle:'',
+    enteredAmount:'',
+    enteredDate:''
+  })
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
-    console.log(
-      "Item Name:-",
-      enteredTitle,
-      "Item Amount:-",
-      enteredAmount,
-      "Item Date:-",
-      enteredDate
-    );
+    // console.log(
+    //   "Item Name:-",
+    //   enteredTitle,
+    //   "Item Amount:-",
+    //   enteredAmount,
+    //   "Item Date:-",
+    //   enteredDate
+    // );
+
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate)
+    }
+
+    console.log(expenseData);
   };
 
   return (
